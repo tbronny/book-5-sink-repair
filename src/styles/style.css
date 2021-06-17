@@ -1,0 +1,27 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.button {
+    background-color: white;
+    border-color: #008cba;
+    padding: 8px;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: #008cba;
+    color: white;
+}
+
+ul {
+    padding-left: 0rem;
+}
+
+li {
+    margin-left: 0;
+    padding: 0.5rem;
+    list-style-type: none;
+}
