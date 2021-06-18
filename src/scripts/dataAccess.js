@@ -41,3 +41,23 @@ export const deleteRequest = (id) => {
         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
+
+export const saveCompletions = (serviceCompletions) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(serviceCompletions),
+    }
+    // Add this...
+    const mainContainer = document.querySelector("#container")
+
+    return fetch(`${API}/completions`, fetchOptions)
+        .then((response) => response.json())
+        .then(() => {
+            // do something after the POST is finished. Stay tuned for what to put here!
+            // ...and this
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
