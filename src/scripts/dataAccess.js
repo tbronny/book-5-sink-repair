@@ -1,5 +1,7 @@
 const applicationState = {
     requests: [],
+    completions: [],
+    plumbers: [],
 }
 
 const API = "http://localhost:8088"
@@ -13,7 +15,27 @@ export const fetchRequests = () => {
         })
 }
 
+export const fetchCompletions = () => {
+    return fetch(`${API}/completions`)
+        .then((response) => response.json())
+        .then((serviceCompletions) => {
+            // Store the external state in application state
+            applicationState.completions = serviceCompletions
+        })
+}
+
+export const fetchPlumbers = () => {
+    return fetch(`${API}/plumbers`)
+        .then((response) => response.json())
+        .then((servicePlumbers) => {
+            // Store the external state in application state
+            applicationState.plumbers = servicePlumbers
+        })
+}
+
 export const getRequests = () => [...applicationState.requests]
+export const getCompletions = () => [...applicationState.completions]
+export const getPlumbers = () => [...applicationState.plumbers]
 
 export const sendRequest = (userServiceRequest) => {
     const fetchOptions = {
@@ -42,7 +64,7 @@ export const deleteRequest = (id) => {
     })
 }
 
-export const saveCompletions = (serviceCompletions) => {
+export const sendCompletions = (serviceCompletions) => {
     const fetchOptions = {
         method: "POST",
         headers: {

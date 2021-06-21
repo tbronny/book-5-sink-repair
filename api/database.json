@@ -1,20 +1,55 @@
 {
-  "plumbers": [],
-  "completions": [],
-  "requests": [
+  "plumbers": [
     {
-      "description": "broken sink",
-      "address": "123 cora st",
-      "budget": "500",
-      "neededBy": "2021-06-16",
+      "id": 1,
+      "name": "Maude"
+    },
+    {
+      "id": 2,
+      "name": "Merle"
+    }
+  ],
+  "completions": [
+    {
+      "requestId": 1,
+      "plumberId": 2,
+      "dateCreated": 1624303012476,
       "id": 1
     },
     {
-      "description": "kjdhfan",
-      "address": "asdfas",
-      "budget": "300",
-      "neededBy": "2021-06-17",
+      "requestId": 2,
+      "plumberId": 2,
+      "dateCreated": 1624303013913,
       "id": 2
+    },
+    {
+      "requestId": 3,
+      "plumberId": 1,
+      "dateCreated": 1624303015534,
+      "id": 3
+    }
+  ],
+  "requests": [
+    {
+      "description": "broken sink",
+      "address": "123 main st",
+      "budget": "300",
+      "neededBy": "2021-06-23",
+      "id": 1
+    },
+    {
+      "description": "faucet cracked",
+      "address": "ur moms house",
+      "budget": "500",
+      "neededBy": "2021-06-25",
+      "id": 2
+    },
+    {
+      "description": "leaking faucet",
+      "address": "456 ur dads house",
+      "budget": "75",
+      "neededBy": "2021-06-24",
+      "id": 3
     }
   ]
 }
